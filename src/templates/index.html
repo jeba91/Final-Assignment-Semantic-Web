@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inferencing</title>
+		<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		<script type="text/javascript">
+        </script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class='row'>
+				<div class='col-md-4'>
+					<h3>Select a country to get a list of universities located there</h3>
+					<div><a id="link14" class='btn btn-primary'>Netherlands</a></div>
+					<div><a id="link15" class='btn btn-primary'>England</a></div>
+					<div><a id="link16" class='btn btn-primary'>Germany</a></div>
+					<div><a id="link17" class='btn btn-primary'>France</a></div>
+					<div><a id="link18" class='btn btn-primary'>United States</a></div>
+					<h3>Select a city to get a list of universities located there</h3>
+					<div><a id="link19" class='btn btn-primary'>Amsterdam</a></div>
+					<div><a id="link20" class='btn btn-primary'>New Haven, connecticut</a></div>
+					<div><a id="link21" class='btn btn-primary'>Philadelphia</a></div>
+					<div><a id="link22" class='btn btn-primary'>London</a></div>
+					<h3>Click below to get a list of language courses</small></h3>
+					<div><a id="link23" class='btn btn-primary'>Courses</a></div>
+				</div>
+				<div class='col-md-6'>
+					<h3>Results</h3>
+					<div id="linktarget14" class='well' style='height: 30em; scroll: both; overflow: auto; width: 50em'>This is where your result will be listed.</div>
+				</div>
+			</div>
+		</div>
+
+		<script src='{{url_for("static", filename="js/jquery-1.11.0.min.js") }}' type='text/javascript'></script>
+		<script src='{{url_for("static", filename="js/tutorial.js") }}' type='text/javascript'></script>
+
+
+	</body>
+</head>
