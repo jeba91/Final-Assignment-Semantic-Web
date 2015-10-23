@@ -1,0 +1,2479 @@
+@prefix : <http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#> .
+@prefix OU: <http://courseware.rkbexplorer.com/ontologies/courseware#> .
+@prefix ex: <http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix ou: <http://data.open.ac.uk/topic/> .
+@prefix dbc: <http://dbpedia.org/resource/Category:> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix mlo: <http://purl.org/net/mlo/> .
+@prefix ns5: <http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix uni: <http://data.open.ac.uk/organization/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix term: <http://purl.org/dc/terms/> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+@prefix course: <http://data.open.ac.uk/course/> .
+@base <http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24> .
+
+<http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://courseware.rkbexplorer.com/ontologies/courseware#taught-at
+
+OU:taught-at rdf:type owl:ObjectProperty .
+
+
+
+###  http://dbpedia.org/ontology/city
+
+dbo:city rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf :Is_located_in .
+
+
+
+###  http://dbpedia.org/ontology/country
+
+dbo:country rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf :Is_located_in .
+
+
+
+###  http://purl.org/dc/terms/subject
+
+term:subject rdf:type owl:ObjectProperty ;
+             
+             owl:equivalentProperty :teaches ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Has_ranking
+
+:Has_ranking rdf:type owl:ObjectProperty ;
+             
+             owl:inverseOf :is_ranking_of .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Is_located_in
+
+:Is_located_in rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Is_location_of
+
+:Is_location_of rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty ;
+                
+                owl:inverseOf :Is_located_in .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#hasA
+
+:hasA rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#hasScore
+
+:hasScore rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#has_Faculty
+
+:has_Faculty rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#has_less_than
+
+:has_less_than rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#has_research
+
+:has_research rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#is_Faculty_Of
+
+:is_Faculty_Of rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               
+               owl:inverseOf :has_Faculty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#is_ranking_of
+
+:is_ranking_of rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#teaches
+
+:teaches rdf:type owl:ObjectProperty ,
+                  owl:TransitiveProperty ;
+         
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/numberOfStudents
+
+dbo:numberOfStudents rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Students ;
+                     
+                     owl:equivalentProperty :numberOfStudents .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#collegeTuitionDollar
+
+:collegeTuitionDollar rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:domain :College_tuition ;
+                      
+                      rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#collegeTuitionEuro
+
+:collegeTuitionEuro rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:domain :College_tuition ;
+                    
+                    rdfs:range xsd:int ;
+                    
+                    rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#numberOfStudents
+
+:numberOfStudents rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Students ;
+                  
+                  rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#rankNumber
+
+:rankNumber rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Ranking ;
+            
+            rdfs:range xsd:int ;
+            
+            rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#researchNumber
+
+:researchNumber rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Research ;
+                
+                rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#scoreNumberAll
+
+:scoreNumberAll rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Score ;
+                
+                rdfs:range xsd:int ;
+                
+                rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#scoreNumberInt
+
+:scoreNumberInt rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Score ;
+                
+                rdfs:range xsd:int ;
+                
+                rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/University
+
+dbo:University rdf:type owl:Class ;
+               
+               owl:equivalentClass :University .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#BritishUniversity
+
+:BritishUniversity rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( :University
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :Is_located_in ;
+                                                                owl:hasValue :United_Kingdom
+                                                              ]
+                                                            )
+                                       ] ;
+                   
+                   rdfs:subClassOf :University .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#City
+
+:City rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Classes
+
+:Classes rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#College_tuition
+
+:College_tuition rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :collegeTuitionDollar ;
+                                                              owl:someValuesFrom xsd:int
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :collegeTuitionEuro ;
+                                                              owl:someValuesFrom xsd:int
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :Research .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Country
+
+:Country rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :Is_location_of ;
+                               owl:someValuesFrom :City
+                             ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Courses
+
+:Courses rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Dollar
+
+:Dollar rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :collegeTuitionDollar ;
+                              owl:someValuesFrom xsd:int
+                            ] ;
+        
+        rdfs:subClassOf :College_tuition .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Dollar1000-5000
+
+:Dollar1000-5000 rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :Dollar
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :collegeTuitionDollar ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:int ;
+                                                                                   owl:withRestrictions ( [ xsd:minExclusive "999"^^xsd:int
+                                                                                                          ]
+                                                                                                          [ xsd:maxExclusive "5000"^^xsd:int
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :Dollar .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Dollar5000-higher
+
+:Dollar5000-higher rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( :Dollar
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :collegeTuitionDollar ;
+                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                     owl:onDatatype xsd:int ;
+                                                                                     owl:withRestrictions ( [ xsd:minExclusive "4999"^^xsd:int
+                                                                                                            ]
+                                                                                                          )
+                                                                                   ]
+                                                              ]
+                                                            )
+                                       ] ;
+                   
+                   rdfs:subClassOf :Dollar .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#DutchUniversity
+
+:DutchUniversity rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :University
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :Is_located_in ;
+                                                              owl:hasValue :Netherlands
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :University .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Euro
+
+:Euro rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty :collegeTuitionEuro ;
+                            owl:someValuesFrom xsd:int
+                          ] ;
+      
+      rdfs:subClassOf :College_tuition .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Euro1000-5000
+
+:Euro1000-5000 rdf:type owl:Class ;
+               
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:intersectionOf ( :Euro
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :collegeTuitionEuro ;
+                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                 owl:onDatatype xsd:int ;
+                                                                                 owl:withRestrictions ( [ xsd:minExclusive "999"^^xsd:int
+                                                                                                        ]
+                                                                                                        [ xsd:maxExclusive "5000"^^xsd:int
+                                                                                                        ]
+                                                                                                      )
+                                                                               ]
+                                                          ]
+                                                        )
+                                   ] ;
+               
+               rdfs:subClassOf :Euro .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Euro5000-higher
+
+:Euro5000-higher rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :Euro
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :collegeTuitionEuro ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:int ;
+                                                                                   owl:withRestrictions ( [ xsd:minExclusive "4999"^^xsd:int
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :Euro .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Extra_Large_Number
+
+:Extra_Large_Number rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :numberOfStudents ;
+                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                               owl:onDatatype xsd:int ;
+                                                               owl:withRestrictions ( [ xsd:minExclusive "29999"^^xsd:int
+                                                                                      ]
+                                                                                    )
+                                                             ]
+                                        ] ;
+                    
+                    rdfs:subClassOf :Students .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#High
+
+:High rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty :researchNumber ;
+                            owl:hasValue 4
+                          ] ;
+      
+      rdfs:subClassOf :Research .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#History
+
+:History rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :teaches ;
+                               owl:hasValue :history
+                             ] ;
+         
+         rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#InternationaalScore50-60
+
+:InternationaalScore50-60 rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:intersectionOf ( :Score
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :scoreNumberInt ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:int ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive "49"^^xsd:int
+                                                                                                                   ]
+                                                                                                                   [ xsd:maxExclusive "60"^^xsd:int
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   )
+                                              ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#InternationaalScore60-70
+
+:InternationaalScore60-70 rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:intersectionOf ( :Score
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :scoreNumberInt ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:int ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive "59"^^xsd:int
+                                                                                                                   ]
+                                                                                                                   [ xsd:maxExclusive "70"^^xsd:int
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   )
+                                              ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#InternationaalScore70-80
+
+:InternationaalScore70-80 rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:intersectionOf ( :Score
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :scoreNumberInt ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:int ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive "69"^^xsd:int
+                                                                                                                   ]
+                                                                                                                   [ xsd:maxExclusive "80"^^xsd:int
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   )
+                                              ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#InternationaalScore80-90
+
+:InternationaalScore80-90 rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:intersectionOf ( :Score
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :scoreNumberInt ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:int ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive "79"^^xsd:int
+                                                                                                                   ]
+                                                                                                                   [ xsd:maxExclusive "90"^^xsd:int
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   )
+                                              ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#InternationaalScore90-100
+
+:InternationaalScore90-100 rdf:type owl:Class ;
+                           
+                           owl:equivalentClass [ rdf:type owl:Class ;
+                                                 owl:intersectionOf ( :Score
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :scoreNumberInt ;
+                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:int ;
+                                                                                             owl:withRestrictions ( [ xsd:minExclusive "89"^^xsd:int
+                                                                                                                    ]
+                                                                                                                    [ xsd:maxExclusive "101"^^xsd:int
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                      ]
+                                                                    )
+                                               ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Languages
+
+:Languages rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Classes .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Large_Number
+
+:Large_Number rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :numberOfStudents ;
+                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                         owl:onDatatype xsd:int ;
+                                                         owl:withRestrictions ( [ xsd:minExclusive "19999"^^xsd:int
+                                                                                ]
+                                                                                [ xsd:maxExclusive "30000"^^xsd:int
+                                                                                ]
+                                                                              )
+                                                       ]
+                                  ] ;
+              
+              rdfs:subClassOf :Students .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Lifestyle_Informatics
+
+:Lifestyle_Informatics rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty :teaches ;
+                                             owl:hasValue :semantic_web
+                                           ] ;
+                       
+                       rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Low
+
+:Low rdf:type owl:Class ;
+     
+     owl:equivalentClass [ rdf:type owl:Restriction ;
+                           owl:onProperty :researchNumber ;
+                           owl:hasValue 2
+                         ] ;
+     
+     rdfs:subClassOf :Research .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Medicine
+
+:Medicine rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :teaches ;
+                                owl:hasValue :medicine
+                              ] ;
+          
+          rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Medium_Number
+
+:Medium_Number rdf:type owl:Class ;
+               
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :numberOfStudents ;
+                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                          owl:onDatatype xsd:int ;
+                                                          owl:withRestrictions ( [ xsd:maxExclusive "20000"^^xsd:int
+                                                                                 ]
+                                                                                 [ xsd:minExclusive "9999"^^xsd:int
+                                                                                 ]
+                                                                               )
+                                                        ]
+                                   ] ;
+               
+               rdfs:subClassOf :Students .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Normal
+
+:Normal rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :researchNumber ;
+                              owl:hasValue 3
+                            ] ;
+        
+        rdfs:subClassOf :Research .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Ranking
+
+:Ranking rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :rankNumber ;
+                               owl:someValuesFrom xsd:int
+                             ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Religion
+
+:Religion rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :teaches ;
+                                owl:hasValue :religion
+                              ] ;
+          
+          rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Research
+
+:Research rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :researchNumber ;
+                                owl:someValuesFrom xsd:int
+                              ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Science
+
+:Science rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :teaches ;
+                               owl:hasValue :science
+                             ] ;
+         
+         rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Score
+
+:Score rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :scoreNumberInt ;
+                             owl:someValuesFrom xsd:int
+                           ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Small_Number
+
+:Small_Number rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :numberOfStudents ;
+                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                         owl:onDatatype xsd:int ;
+                                                         owl:withRestrictions ( [ xsd:maxExclusive "10000"^^xsd:int
+                                                                                ]
+                                                                              )
+                                                       ]
+                                  ] ;
+              
+              rdfs:subClassOf :Students .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Social
+
+:Social rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :teaches ;
+                              owl:hasValue :social
+                            ] ;
+        
+        rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Students
+
+:Students rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :numberOfStudents ;
+                                owl:someValuesFrom xsd:int
+                              ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Technology
+
+:Technology rdf:type owl:Class ;
+            
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :teaches ;
+                                  owl:hasValue :technology
+                                ] ;
+            
+            rdfs:subClassOf :UniversityType .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Top10
+
+:Top10 rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :Ranking
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :rankNumber ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:onDatatype xsd:int ;
+                                                                         owl:withRestrictions ( [ xsd:maxExclusive "11"^^xsd:int
+                                                                                                ]
+                                                                                              )
+                                                                       ]
+                                                  ]
+                                                )
+                           ] ;
+       
+       rdfs:subClassOf :Ranking .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Top100-200
+
+:Top100-200 rdf:type owl:Class ;
+            
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( :Ranking
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :rankNumber ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:int ;
+                                                                              owl:withRestrictions ( [ xsd:maxExclusive "201"^^xsd:int
+                                                                                                     ]
+                                                                                                     [ xsd:minExclusive "99"^^xsd:int
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     )
+                                ] ;
+            
+            rdfs:subClassOf :Ranking .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Top11-50
+
+:Top11-50 rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Ranking
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :rankNumber ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:onDatatype xsd:int ;
+                                                                            owl:withRestrictions ( [ xsd:minExclusive "10"^^xsd:int
+                                                                                                   ]
+                                                                                                   [ xsd:maxExclusive "51"^^xsd:int
+                                                                                                   ]
+                                                                                                 )
+                                                                          ]
+                                                     ]
+                                                   )
+                              ] ;
+          
+          rdfs:subClassOf :Ranking .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Top50-100
+
+:Top50-100 rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :Ranking
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :rankNumber ;
+                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                             owl:onDatatype xsd:int ;
+                                                                             owl:withRestrictions ( [ xsd:maxExclusive "101"^^xsd:int
+                                                                                                    ]
+                                                                                                    [ xsd:minExclusive "49"^^xsd:int
+                                                                                                    ]
+                                                                                                  )
+                                                                           ]
+                                                      ]
+                                                    )
+                               ] ;
+           
+           rdfs:subClassOf :Ranking .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#University
+
+:University rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#UniversityType
+
+:UniversityType rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :teaches ;
+                                      owl:someValuesFrom :Classes
+                                    ] .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Very_High
+
+:Very_High rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :researchNumber ;
+                                 owl:hasValue 5
+                               ] ;
+           
+           rdfs:subClassOf :Research .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Very_Low
+
+:Very_Low rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :researchNumber ;
+                                owl:hasValue 1
+                              ] ;
+          
+          rdfs:subClassOf :Research .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://data.open.ac.uk/course/a105
+
+course:a105 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Voices, texts and material culture"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a200
+
+course:a200 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Exploring history: medieval to modern 1400-1900"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a207
+
+course:a207 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "From Enlightenment to Romanticism c.1780-1830"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a218
+
+course:a218 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Medicine and society in Europe 1500-1930"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a275
+
+course:a275 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Reading classical Greek: language and literature"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/a326
+
+course:a326 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Empire: 1492-1975"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a327
+
+course:a327 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Europe 1914-1989: war, peace, modernity"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a825
+
+course:a825 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "MA History part 1"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/a826
+
+course:a826 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "MA History part 2"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/aa100
+
+course:aa100 rdf:type :Courses ,
+                      owl:NamedIndividual ;
+             
+             rdfs:label "The arts past and present"^^xsd:string ;
+             
+             OU:taught-at uni:the_open_university ;
+             
+             term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/ad281
+
+course:ad281 rdf:type :Courses ,
+                      owl:NamedIndividual ;
+             
+             rdfs:label "Understanding global heritage"^^xsd:string ;
+             
+             OU:taught-at uni:the_open_university ;
+             
+             term:subject ou:history .
+
+
+
+###  http://data.open.ac.uk/course/l120
+
+course:l120 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Ouverture: intermediate French"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l130
+
+course:l130 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Auftakt: intermediate German"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l140
+
+course:l140 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "En rumbo: intermediate Spanish"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l150
+
+course:l150 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Vivace: intermediate Italian"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l161
+
+course:l161 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Exploring languages and cultures"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l192
+
+course:l192 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Bon départ: beginners' French"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l193
+
+course:l193 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Rundblick: beginners' German"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l194
+
+course:l194 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Portales: beginners' Spanish"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l195
+
+course:l195 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Andante: beginners' Italian"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l197
+
+course:l197 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Beginners' Chinese"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l203
+
+course:l203 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Motive: upper intermediate German"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l204
+
+course:l204 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Viento en popa: upper intermediate Spanish"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l211
+
+course:l211 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Envol: upper intermediate French"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l310
+
+course:l310 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Mises au point: advanced French"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l313
+
+course:l313 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Variationen: advanced German"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/course/l314
+
+course:l314 rdf:type :Courses ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "A buen puerto: advanced Spanish"^^xsd:string ;
+            
+            OU:taught-at uni:the_open_university ;
+            
+            term:subject ou:languages .
+
+
+
+###  http://data.open.ac.uk/organization/the_open_university
+
+uni:the_open_university rdf:type :University ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://data.open.ac.uk/topic/history
+
+ou:history rdf:type :Classes ,
+                    owl:NamedIndividual .
+
+
+
+###  http://data.open.ac.uk/topic/languages
+
+ou:languages rdf:type :Classes ,
+                      :Languages ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Aachen
+
+dbr:Aachen rdf:type :City ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Arizona_State_University
+
+dbr:Arizona_State_University rdf:type dbo:University ,
+                                      owl:NamedIndividual ;
+                             
+                             rdfs:label "Arizona State University"@en ;
+                             
+                             dbo:numberOfStudents "11277"^^xsd:nonNegativeInteger ,
+                                                  "13750"^^xsd:nonNegativeInteger ;
+                             
+                             dbo:country dbr:United_States ;
+                             
+                             dbo:city <http://dbpedia.org/resource/Tempe,_Arizona> .
+
+
+
+###  http://dbpedia.org/resource/Blinn_College
+
+dbr:Blinn_College rdf:type dbo:University ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Blinn College"@en ;
+                  
+                  dbo:numberOfStudents "19317"^^xsd:nonNegativeInteger ;
+                  
+                  dbo:country dbr:United_States ;
+                  
+                  dbo:city <http://dbpedia.org/resource/Brenham,_Texas> .
+
+
+
+###  http://dbpedia.org/resource/Bobigny
+
+dbr:Bobigny rdf:type :City ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Boise_State_University
+
+dbr:Boise_State_University rdf:type dbo:University ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "Boise State University"@en ;
+                           
+                           dbo:numberOfStudents "22259"^^xsd:nonNegativeInteger ;
+                           
+                           dbo:country dbr:United_States ;
+                           
+                           dbo:city <http://dbpedia.org/resource/Boise,_Idaho> .
+
+
+
+###  http://dbpedia.org/resource/Boston
+
+dbr:Boston rdf:type :City ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Boston_University
+
+dbr:Boston_University rdf:type dbo:University ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "Boston University"@en ;
+                      
+                      dbo:numberOfStudents "30009"^^xsd:nonNegativeInteger ;
+                      
+                      dbo:city dbr:Boston ;
+                      
+                      dbo:country dbr:United_States .
+
+
+
+###  http://dbpedia.org/resource/Brandman_University
+
+dbr:Brandman_University rdf:type dbo:University ,
+                                 owl:NamedIndividual ;
+                        
+                        rdfs:label "Brandman University"@en ;
+                        
+                        dbo:numberOfStudents "11000"^^xsd:nonNegativeInteger ;
+                        
+                        dbo:country dbr:United_States ;
+                        
+                        dbo:city <http://dbpedia.org/resource/Irvine,_California> .
+
+
+
+###  http://dbpedia.org/resource/Campus_of_the_University_of_Montana
+
+dbr:Campus_of_the_University_of_Montana rdf:type dbo:University ,
+                                                 owl:NamedIndividual ;
+                                        
+                                        rdfs:label "Campus of the University of Montana"@en ;
+                                        
+                                        dbo:numberOfStudents "15642"^^xsd:nonNegativeInteger ;
+                                        
+                                        dbo:country dbr:United_States ;
+                                        
+                                        dbo:city <http://dbpedia.org/resource/Missoula,_Montana> .
+
+
+
+###  http://dbpedia.org/resource/Central_Washington_University
+
+dbr:Central_Washington_University rdf:type dbo:University ,
+                                           owl:NamedIndividual ;
+                                  
+                                  rdfs:label "Central Washington University"@en ;
+                                  
+                                  dbo:numberOfStudents "11000"^^xsd:nonNegativeInteger ;
+                                  
+                                  dbo:country dbr:United_States ;
+                                  
+                                  dbo:city <http://dbpedia.org/resource/Ellensburg,_Washington> .
+
+
+
+###  http://dbpedia.org/resource/Chicago
+
+dbr:Chicago rdf:type :City ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/College_of_Southern_Maryland
+
+dbr:College_of_Southern_Maryland rdf:type dbo:University ,
+                                          owl:NamedIndividual ;
+                                 
+                                 rdfs:label "College of Southern Maryland"@en ;
+                                 
+                                 dbo:numberOfStudents "24358"^^xsd:nonNegativeInteger ;
+                                 
+                                 dbo:country dbr:United_States ;
+                                 
+                                 dbo:city <http://dbpedia.org/resource/La_Plata,_Maryland> .
+
+
+
+###  http://dbpedia.org/resource/Drexel_University
+
+dbr:Drexel_University rdf:type dbo:University ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "Drexel University"@en ;
+                      
+                      dbo:numberOfStudents "25500"^^xsd:nonNegativeInteger ;
+                      
+                      dbo:city dbr:Philadelphia ;
+                      
+                      dbo:country dbr:United_States .
+
+
+
+###  http://dbpedia.org/resource/East_Carolina_University
+
+dbr:East_Carolina_University rdf:type dbo:University ,
+                                      owl:NamedIndividual ;
+                             
+                             rdfs:label "East Carolina University"@en ;
+                             
+                             dbo:numberOfStudents "27386"^^xsd:nonNegativeInteger ;
+                             
+                             dbo:country dbr:United_States ;
+                             
+                             dbo:city <http://dbpedia.org/resource/Greenville,_North_Carolina> .
+
+
+
+###  http://dbpedia.org/resource/Edge_Hill_University
+
+dbr:Edge_Hill_University rdf:type dbo:University ,
+                                  owl:NamedIndividual ;
+                         
+                         rdfs:label "Edge Hill University"@en ;
+                         
+                         dbo:numberOfStudents "10110"^^xsd:nonNegativeInteger ,
+                                              "13240"^^xsd:nonNegativeInteger ;
+                         
+                         dbo:country dbr:England ;
+                         
+                         dbo:city dbr:Lancashire ,
+                                  dbr:Ormskirk .
+
+
+
+###  http://dbpedia.org/resource/Emory_University
+
+dbr:Emory_University rdf:type dbo:University ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "Emory University"@en ;
+                     
+                     dbo:numberOfStudents "14513"^^xsd:nonNegativeInteger ;
+                     
+                     dbo:country dbr:United_States ;
+                     
+                     dbo:city <http://dbpedia.org/resource/Druid_Hills,_Georgia> .
+
+
+
+###  http://dbpedia.org/resource/England
+
+dbr:England rdf:type :Country ,
+                     owl:NamedIndividual ;
+            
+            owl:sameAs :United_Kingdom .
+
+
+
+###  http://dbpedia.org/resource/FH_Aachen
+
+dbr:FH_Aachen rdf:type dbo:University ,
+                       owl:NamedIndividual ;
+              
+              rdfs:label "FH Aachen"@en ;
+              
+              dbo:numberOfStudents "11302"^^xsd:nonNegativeInteger ;
+              
+              dbo:city dbr:Aachen ;
+              
+              dbo:country dbr:Germany ;
+              
+              dbo:city dbr:Jülich .
+
+
+
+###  http://dbpedia.org/resource/France
+
+dbr:France rdf:type :Country ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Germany
+
+dbr:Germany rdf:type :Country ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Harford_Community_College
+
+dbr:Harford_Community_College rdf:type dbo:University ,
+                                       owl:NamedIndividual ;
+                              
+                              rdfs:label "Harford Community College"@en ;
+                              
+                              dbo:numberOfStudents "10000"^^xsd:nonNegativeInteger ;
+                              
+                              dbo:country dbr:United_States ;
+                              
+                              dbo:city <http://dbpedia.org/resource/Churchville,_Maryland> .
+
+
+
+###  http://dbpedia.org/resource/James_Madison_University
+
+dbr:James_Madison_University rdf:type dbo:University ,
+                                      owl:NamedIndividual ;
+                             
+                             rdfs:label "James Madison University"@en ;
+                             
+                             dbo:numberOfStudents "20181"^^xsd:nonNegativeInteger ;
+                             
+                             dbo:country dbr:United_States ;
+                             
+                             dbo:city <http://dbpedia.org/resource/Harrisonburg,_Virginia> .
+
+
+
+###  http://dbpedia.org/resource/Jülich
+
+dbr:Jülich rdf:type :City ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Kanawha_County_Schools
+
+dbr:Kanawha_County_Schools rdf:type dbo:University ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "Kanawha County Schools"@en ;
+                           
+                           dbo:numberOfStudents "28350"^^xsd:nonNegativeInteger ;
+                           
+                           dbo:country dbr:United_States ;
+                           
+                           dbo:city <http://dbpedia.org/resource/Charleston,_West_Virginia> .
+
+
+
+###  http://dbpedia.org/resource/Kansas_State_University
+
+dbr:Kansas_State_University rdf:type dbo:University ,
+                                     owl:NamedIndividual ;
+                            
+                            rdfs:label "Kansas State University"@en ;
+                            
+                            dbo:numberOfStudents "24766"^^xsd:nonNegativeInteger ;
+                            
+                            dbo:country dbr:United_States ;
+                            
+                            dbo:city <http://dbpedia.org/resource/Manhattan,_Kansas> .
+
+
+
+###  http://dbpedia.org/resource/Kent_State_University
+
+dbr:Kent_State_University rdf:type dbo:University ,
+                                   owl:NamedIndividual ;
+                          
+                          rdfs:label "Kent State University"@en ;
+                          
+                          dbo:numberOfStudents "29477"^^xsd:nonNegativeInteger ;
+                          
+                          dbo:country dbr:United_States ;
+                          
+                          dbo:city <http://dbpedia.org/resource/Kent,_Ohio> .
+
+
+
+###  http://dbpedia.org/resource/Lancashire
+
+dbr:Lancashire rdf:type :City ,
+                        owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Lelystad
+
+dbr:Lelystad rdf:type :City ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Long_Beach_City_College
+
+dbr:Long_Beach_City_College rdf:type dbo:University ,
+                                     owl:NamedIndividual ;
+                            
+                            rdfs:label "Long Beach City College"@en ;
+                            
+                            dbo:numberOfStudents "24653"^^xsd:nonNegativeInteger ;
+                            
+                            dbo:country dbr:United_States ;
+                            
+                            dbo:city <http://dbpedia.org/resource/Long_Beach,_California> .
+
+
+
+###  http://dbpedia.org/resource/Los_Angeles
+
+dbr:Los_Angeles rdf:type :City ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Los_Angeles_Pierce_College
+
+dbr:Los_Angeles_Pierce_College rdf:type dbo:University ,
+                                        owl:NamedIndividual ;
+                               
+                               rdfs:label "Los Angeles Pierce College"@en ;
+                               
+                               dbo:numberOfStudents "23000"^^xsd:nonNegativeInteger ;
+                               
+                               dbo:city dbr:Los_Angeles ;
+                               
+                               dbo:country dbr:United_States ;
+                               
+                               dbo:city <http://dbpedia.org/resource/Woodland_Hills,_Los_Angeles> .
+
+
+
+###  http://dbpedia.org/resource/Louisiana_Tech_University
+
+dbr:Louisiana_Tech_University rdf:type dbo:University ,
+                                       owl:NamedIndividual ;
+                              
+                              rdfs:label "Louisiana Tech University"@en ;
+                              
+                              dbo:numberOfStudents "11271"^^xsd:nonNegativeInteger ;
+                              
+                              dbo:country dbr:United_States ;
+                              
+                              dbo:city <http://dbpedia.org/resource/Ruston,_Louisiana> .
+
+
+
+###  http://dbpedia.org/resource/Merced_College
+
+dbr:Merced_College rdf:type dbo:University ,
+                            owl:NamedIndividual ;
+                   
+                   rdfs:label "Merced College"@en ;
+                   
+                   dbo:numberOfStudents "11636"^^xsd:nonNegativeInteger ;
+                   
+                   dbo:country dbr:United_States ;
+                   
+                   dbo:city <http://dbpedia.org/resource/Merced,_California> .
+
+
+
+###  http://dbpedia.org/resource/Netherlands
+
+dbr:Netherlands rdf:type :Country ,
+                         owl:NamedIndividual ;
+                
+                owl:sameAs :Netherlands .
+
+
+
+###  http://dbpedia.org/resource/Northbrook_College
+
+dbr:Northbrook_College rdf:type dbo:University ,
+                                owl:NamedIndividual ;
+                       
+                       rdfs:label "Northbrook College"@en ;
+                       
+                       dbo:numberOfStudents "16000"^^xsd:nonNegativeInteger ;
+                       
+                       dbo:country dbr:England ;
+                       
+                       dbo:city dbr:Worthing .
+
+
+
+###  http://dbpedia.org/resource/Northern_Kentucky_University
+
+dbr:Northern_Kentucky_University rdf:type dbo:University ,
+                                          owl:NamedIndividual ;
+                                 
+                                 rdfs:label "Northern Kentucky University"@en ;
+                                 
+                                 dbo:numberOfStudents "15405"^^xsd:nonNegativeInteger ;
+                                 
+                                 dbo:country dbr:United_States ;
+                                 
+                                 dbo:city <http://dbpedia.org/resource/Highland_Heights,_Kentucky> .
+
+
+
+###  http://dbpedia.org/resource/Ormskirk
+
+dbr:Ormskirk rdf:type :City ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Paris_13_University
+
+dbr:Paris_13_University rdf:type dbo:University ,
+                                 owl:NamedIndividual ;
+                        
+                        rdfs:label "Paris 13 University"@en ;
+                        
+                        dbo:numberOfStudents "23078"^^xsd:nonNegativeInteger ;
+                        
+                        dbo:city dbr:Bobigny ;
+                        
+                        dbo:country dbr:France ;
+                        
+                        dbo:city dbr:Saint-Denis ,
+                                 dbr:Villetaneuse .
+
+
+
+###  http://dbpedia.org/resource/Philadelphia
+
+dbr:Philadelphia rdf:type :City ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Presidents_of_the_University_of_Montana
+
+dbr:Presidents_of_the_University_of_Montana rdf:type dbo:University ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "Presidents of the University of Montana"@en ;
+                                            
+                                            dbo:numberOfStudents "15642"^^xsd:nonNegativeInteger ;
+                                            
+                                            dbo:country dbr:United_States ;
+                                            
+                                            dbo:city <http://dbpedia.org/resource/Missoula,_Montana> .
+
+
+
+###  http://dbpedia.org/resource/Saint-Denis
+
+dbr:Saint-Denis rdf:type :City ,
+                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/San_Diego
+
+dbr:San_Diego rdf:type :City ,
+                       owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Santa_Fe_College
+
+dbr:Santa_Fe_College rdf:type dbo:University ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "Santa Fe College"@en ;
+                     
+                     dbo:numberOfStudents "17391"^^xsd:nonNegativeInteger ;
+                     
+                     dbo:country dbr:United_States ;
+                     
+                     dbo:city <http://dbpedia.org/resource/Gainesville,_Florida> .
+
+
+
+###  http://dbpedia.org/resource/South_Dakota_State_University
+
+dbr:South_Dakota_State_University rdf:type dbo:University ,
+                                           owl:NamedIndividual ;
+                                  
+                                  rdfs:label "South Dakota State University"@en ;
+                                  
+                                  dbo:numberOfStudents "12554"^^xsd:nonNegativeInteger ;
+                                  
+                                  dbo:country dbr:United_States ;
+                                  
+                                  dbo:city <http://dbpedia.org/resource/Brookings,_South_Dakota> .
+
+
+
+###  http://dbpedia.org/resource/Syracuse_University
+
+dbr:Syracuse_University rdf:type dbo:University ,
+                                 owl:NamedIndividual ;
+                        
+                        rdfs:label "Syracuse University"@en ;
+                        
+                        dbo:numberOfStudents "21267"^^xsd:nonNegativeInteger ;
+                        
+                        dbo:country dbr:United_States ;
+                        
+                        dbo:city <http://dbpedia.org/resource/Syracuse,_New_York> .
+
+
+
+###  http://dbpedia.org/resource/United_States
+
+dbr:United_States rdf:type :Country ,
+                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/University_of_Chicago
+
+dbr:University_of_Chicago rdf:type dbo:University ,
+                                   owl:NamedIndividual ;
+                          
+                          rdfs:label "University of Chicago"@en ;
+                          
+                          dbo:numberOfStudents "14954"^^xsd:nonNegativeInteger ;
+                          
+                          dbo:city dbr:Chicago ;
+                          
+                          dbo:country dbr:United_States .
+
+
+
+###  http://dbpedia.org/resource/University_of_Idaho
+
+dbr:University_of_Idaho rdf:type dbo:University ,
+                                 owl:NamedIndividual ;
+                        
+                        rdfs:label "University of Idaho"@en ;
+                        
+                        dbo:numberOfStudents "11180"^^xsd:nonNegativeInteger ,
+                                             "12312"^^xsd:nonNegativeInteger ;
+                        
+                        dbo:country dbr:United_States ;
+                        
+                        dbo:city <http://dbpedia.org/resource/Moscow,_Idaho> .
+
+
+
+###  http://dbpedia.org/resource/University_of_Miami
+
+dbr:University_of_Miami rdf:type dbo:University ,
+                                 owl:NamedIndividual ;
+                        
+                        rdfs:label "University of Miami"@en ;
+                        
+                        dbo:numberOfStudents "15657"^^xsd:nonNegativeInteger ;
+                        
+                        dbo:country dbr:United_States ;
+                        
+                        dbo:city <http://dbpedia.org/resource/Coral_Gables,_Florida> .
+
+
+
+###  http://dbpedia.org/resource/University_of_Mississippi
+
+dbr:University_of_Mississippi rdf:type dbo:University ,
+                                       owl:NamedIndividual ;
+                              
+                              rdfs:label "University of Mississippi"@en ;
+                              
+                              dbo:numberOfStudents "18423"^^xsd:nonNegativeInteger ,
+                                                   "23096"^^xsd:nonNegativeInteger ;
+                              
+                              dbo:country dbr:United_States ;
+                              
+                              dbo:city <http://dbpedia.org/resource/Oxford,_Mississippi> .
+
+
+
+###  http://dbpedia.org/resource/University_of_Pennsylvania
+
+dbr:University_of_Pennsylvania rdf:type dbo:University ,
+                                        owl:NamedIndividual ;
+                               
+                               rdfs:label "University of Pennsylvania"@en ;
+                               
+                               dbo:numberOfStudents "24630"^^xsd:nonNegativeInteger ;
+                               
+                               dbo:city dbr:Philadelphia ;
+                               
+                               dbo:country dbr:United_States .
+
+
+
+###  http://dbpedia.org/resource/Utrecht
+
+dbr:Utrecht rdf:type :City ,
+                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Utrecht_University
+
+dbr:Utrecht_University rdf:type dbo:University ,
+                                owl:NamedIndividual ;
+                       
+                       rdfs:label "Utrecht University"@en ;
+                       
+                       dbo:numberOfStudents "29755"^^xsd:nonNegativeInteger ;
+                       
+                       dbo:country dbr:Netherlands ;
+                       
+                       dbo:city dbr:Utrecht .
+
+
+
+###  http://dbpedia.org/resource/Villetaneuse
+
+dbr:Villetaneuse rdf:type :City ,
+                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/West_Virginia_University
+
+dbr:West_Virginia_University rdf:type dbo:University ,
+                                      owl:NamedIndividual ;
+                             
+                             rdfs:label "West Virginia University"@en ;
+                             
+                             dbo:numberOfStudents "29466"^^xsd:nonNegativeInteger ;
+                             
+                             dbo:country dbr:United_States ;
+                             
+                             dbo:city <http://dbpedia.org/resource/Morgantown,_West_Virginia> .
+
+
+
+###  http://dbpedia.org/resource/Windesheim_University_of_Applied_Sciences
+
+dbr:Windesheim_University_of_Applied_Sciences rdf:type dbo:University ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "Windesheim University of Applied Sciences"@en ;
+                                              
+                                              dbo:numberOfStudents "20300"^^xsd:nonNegativeInteger ;
+                                              
+                                              dbo:city dbr:Lelystad ;
+                                              
+                                              dbo:country dbr:Netherlands ;
+                                              
+                                              dbo:city dbr:Zwolle .
+
+
+
+###  http://dbpedia.org/resource/Worthing
+
+dbr:Worthing rdf:type :City ,
+                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Yale_University
+
+dbr:Yale_University rdf:type dbo:University ,
+                             owl:NamedIndividual ;
+                    
+                    rdfs:label "Yale University"@en ;
+                    
+                    dbo:numberOfStudents "12223"^^xsd:nonNegativeInteger ;
+                    
+                    dbo:country dbr:United_States ;
+                    
+                    dbo:city <http://dbpedia.org/resource/New_Haven,_Connecticut> .
+
+
+
+###  http://dbpedia.org/resource/Zwolle
+
+dbr:Zwolle rdf:type :City ,
+                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Boise,_Idaho
+
+<http://dbpedia.org/resource/Boise,_Idaho> rdf:type :City ,
+                                                    owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brenham,_Texas
+
+<http://dbpedia.org/resource/Brenham,_Texas> rdf:type :City ,
+                                                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Brookings,_South_Dakota
+
+<http://dbpedia.org/resource/Brookings,_South_Dakota> rdf:type :City ,
+                                                               owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Charleston,_West_Virginia
+
+<http://dbpedia.org/resource/Charleston,_West_Virginia> rdf:type :City ,
+                                                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Churchville,_Maryland
+
+<http://dbpedia.org/resource/Churchville,_Maryland> rdf:type :City ,
+                                                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Coral_Gables,_Florida
+
+<http://dbpedia.org/resource/Coral_Gables,_Florida> rdf:type :City ,
+                                                             owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Druid_Hills,_Georgia
+
+<http://dbpedia.org/resource/Druid_Hills,_Georgia> rdf:type :City ,
+                                                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ellensburg,_Washington
+
+<http://dbpedia.org/resource/Ellensburg,_Washington> rdf:type :City ,
+                                                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Gainesville,_Florida
+
+<http://dbpedia.org/resource/Gainesville,_Florida> rdf:type :City ,
+                                                            owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Greenville,_North_Carolina
+
+<http://dbpedia.org/resource/Greenville,_North_Carolina> rdf:type :City ,
+                                                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Harrisonburg,_Virginia
+
+<http://dbpedia.org/resource/Harrisonburg,_Virginia> rdf:type :City ,
+                                                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Highland_Heights,_Kentucky
+
+<http://dbpedia.org/resource/Highland_Heights,_Kentucky> rdf:type :City ,
+                                                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Irvine,_California
+
+<http://dbpedia.org/resource/Irvine,_California> rdf:type :City ,
+                                                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Kent,_Ohio
+
+<http://dbpedia.org/resource/Kent,_Ohio> rdf:type :City ,
+                                                  owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/La_Plata,_Maryland
+
+<http://dbpedia.org/resource/La_Plata,_Maryland> rdf:type :City ,
+                                                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Long_Beach,_California
+
+<http://dbpedia.org/resource/Long_Beach,_California> rdf:type :City ,
+                                                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Manhattan,_Kansas
+
+<http://dbpedia.org/resource/Manhattan,_Kansas> rdf:type :City ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Merced,_California
+
+<http://dbpedia.org/resource/Merced,_California> rdf:type :City ,
+                                                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Missoula,_Montana
+
+<http://dbpedia.org/resource/Missoula,_Montana> rdf:type :City ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Morgantown,_West_Virginia
+
+<http://dbpedia.org/resource/Morgantown,_West_Virginia> rdf:type :City ,
+                                                                 owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Moscow,_Idaho
+
+<http://dbpedia.org/resource/Moscow,_Idaho> rdf:type :City ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/National_University_(California)
+
+<http://dbpedia.org/resource/National_University_(California)> rdf:type dbo:University ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               rdfs:label "National University (California)"@en ;
+                                                               
+                                                               dbo:numberOfStudents "24458"^^xsd:nonNegativeInteger ;
+                                                               
+                                                               dbo:city dbr:San_Diego ;
+                                                               
+                                                               dbo:country dbr:United_States .
+
+
+
+###  http://dbpedia.org/resource/New_Haven,_Connecticut
+
+<http://dbpedia.org/resource/New_Haven,_Connecticut> rdf:type :City ,
+                                                              owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Oxford,_Mississippi
+
+<http://dbpedia.org/resource/Oxford,_Mississippi> rdf:type :City ,
+                                                           owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Ruston,_Louisiana
+
+<http://dbpedia.org/resource/Ruston,_Louisiana> rdf:type :City ,
+                                                         owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Syracuse,_New_York
+
+<http://dbpedia.org/resource/Syracuse,_New_York> rdf:type :City ,
+                                                          owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Tempe,_Arizona
+
+<http://dbpedia.org/resource/Tempe,_Arizona> rdf:type :City ,
+                                                      owl:NamedIndividual .
+
+
+
+###  http://dbpedia.org/resource/Woodland_Hills,_Los_Angeles
+
+<http://dbpedia.org/resource/Woodland_Hills,_Los_Angeles> rdf:type :City ,
+                                                                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Amsterdam
+
+:Amsterdam rdf:type :City ,
+                    owl:NamedIndividual ;
+           
+           :Is_located_in :Netherlands .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Cambridge
+
+:Cambridge rdf:type :City ,
+                    owl:NamedIndividual ;
+           
+           :Is_located_in :United_Kingdom .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#London
+
+:London rdf:type :City ,
+                 owl:NamedIndividual ;
+        
+        :Is_located_in :United_Kingdom .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#Netherlands
+
+:Netherlands rdf:type :Country ,
+                      owl:NamedIndividual ;
+             
+             :Is_location_of :Amsterdam .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#United_Kingdom
+
+:United_Kingdom rdf:type :Country ,
+                         owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#University_College_London
+
+:University_College_London rdf:type :University ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           :collegeTuitionEuro "12066"^^xsd:int ;
+                           
+                           :collegeTuitionDollar "13729"^^xsd:int ;
+                           
+                           :numberOfStudents "3"^^xsd:int ;
+                           
+                           :researchNumber "5"^^xsd:int ;
+                           
+                           :rankNumber "7"^^xsd:int ;
+                           
+                           :scoreNumberInt "97"^^xsd:int ;
+                           
+                           :Is_located_in :London ;
+                           
+                           :teaches :history ,
+                                    :science .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#University_of_Cambridge
+
+:University_of_Cambridge rdf:type :University ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         :collegeTuitionEuro "12066"^^xsd:int ;
+                         
+                         :collegeTuitionDollar "13729"^^xsd:int ;
+                         
+                         :rankNumber "3"^^xsd:int ;
+                         
+                         :numberOfStudents "3"^^xsd:int ;
+                         
+                         :scoreNumberInt "5"^^xsd:int ,
+                                         "99"^^xsd:int ;
+                         
+                         :Is_located_in :Cambridge ;
+                         
+                         :teaches :history ,
+                                  :medicine .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#UvA
+
+:UvA rdf:type :University ,
+              owl:NamedIndividual ,
+              owl:Thing ;
+     
+     :collegeTuitionEuro "1961"^^xsd:int ;
+     
+     :collegeTuitionDollar "2234"^^xsd:int ;
+     
+     :numberOfStudents "3"^^xsd:int ;
+     
+     :researchNumber "5"^^xsd:int ;
+     
+     :rankNumber "52"^^xsd:int ;
+     
+     :scoreNumberInt "80"^^xsd:int ;
+     
+     :Is_located_in :Amsterdam ;
+     
+     :teaches :medicine ,
+              :science .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#VU
+
+:VU rdf:type :University ,
+             owl:NamedIndividual ,
+             owl:Thing ;
+    
+    :rankNumber "176"^^xsd:int ;
+    
+    :collegeTuitionEuro "1961"^^xsd:int ;
+    
+    :collegeTuitionDollar "2234"^^xsd:int ;
+    
+    :numberOfStudents "3"^^xsd:int ;
+    
+    :researchNumber "5"^^xsd:int ;
+    
+    :scoreNumberInt "57"^^xsd:int ;
+    
+    :Is_located_in :Amsterdam ;
+    
+    :teaches :semantic_web .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#history
+
+:history rdf:type :Classes ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#medicine
+
+:medicine rdf:type :Classes ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#religion
+
+:religion rdf:type :Classes ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#science
+
+:science rdf:type :Classes ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#semantic_web
+
+:semantic_web rdf:type :Classes ,
+                       owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#social
+
+:social rdf:type :Classes ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/jeroen/ontologies/2015/9/untitled-ontology-24#technology
+
+:technology rdf:type :Classes ,
+                     owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
